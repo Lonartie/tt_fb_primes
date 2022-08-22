@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include "PrimeVector.h"
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
     * Happy coding!
     */
 
-   for (const int prime : PrimeVector::upTo(35))
+   for (const int prime : Math::PrimeVector::upTo(35))
    {
       std::cout << prime << std::endl;
    }
