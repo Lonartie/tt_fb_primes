@@ -14,6 +14,7 @@ namespace Math
 
    public:
       PrimeVector() = default;
+      ~PrimeVector();
 
       /// @brief Calculates all primes up to max and stores them
       /// @param max The upper boundary to calculate up to
