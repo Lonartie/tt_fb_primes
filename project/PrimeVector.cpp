@@ -8,7 +8,7 @@ PrimeVector PrimeVector::upTo(uint16_t max)
 
 PrimeVector::PrimeVector(uint16_t max)
 {
-   calculatePrimes(max);
+   calculatePrimes(max, indexForPrime);
 }
 
 const int* PrimeVector::begin() const
@@ -21,18 +21,17 @@ const int* PrimeVector::end() const
    return m_primes + m_max;
 }
 
-void PrimeVector::calculatePrimes(uint16_t max)
+void PrimeVector::calculatePrimes(uint16_t max, uint16_t indexForPrime)
 {
    m_primes = new int[max];
-   int c = 0;
-   for (uint16_t i = 0; i < max; i++)
+   for (uint16_t i = 0; i <= max; i++)
    {
       if (isPrime(i))
       {
-         m_primes[c++] = i;
+         m_primes[indexForPrime++] = i;
       }
    }
-   m_max = c;
+   m_max = indexForPrime;
 }
 
 bool PrimeVector::isPrime(uint16_t value) const
@@ -49,11 +48,11 @@ bool PrimeVector::isPrime(uint16_t value) const
          return false;
       }
    }
-
    return true;
 }
 
 PrimeVector::~PrimeVector()
 {
     delete[] m_primes;
+
 }
