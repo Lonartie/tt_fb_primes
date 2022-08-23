@@ -1,5 +1,5 @@
 # Trainee tasks - find bug - primes
-Your task is to find all bugs with this code. <br/>
+Your task is to find all bugs in this code. <br/>
 Try to find as many bugs as you can.  <br/>
 Minimize your changes, no rewrites necessary. <br/>
 And keep an eye on code style and potential memory issues! <br/>
