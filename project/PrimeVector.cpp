@@ -24,11 +24,11 @@ const int* PrimeVector::end() const
 void PrimeVector::calculatePrimes(uint16_t max, uint16_t indexForPrime)
 {
    m_primes = new int[max];
-   for (uint16_t i = 0; i <= max; i++)
+   for (uint16_t index = 0; index <= max; index++)
    {
-      if (isPrime(i))
+      if (isPrime(index))
       {
-         m_primes[indexForPrime++] = i;
+         m_primes[indexForPrime++] = index;
       }
    }
    m_max = indexForPrime;
