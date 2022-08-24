@@ -34,18 +34,7 @@ void PrimeVector::calculatePrimes(uint16_t max)
        {
            m_primes[indexForPrime] = index;
            ++indexForPrime;
-           int* m_primes2 = new int[indexForPrime];
-           for (int i = 0; i < indexForPrime; i++)
-           {
-               m_primes2[i] = m_primes[i];
-           }
-           delete[] m_primes;
-           m_primes = new int[indexForPrime + 1];
-           for (int i = 0; i < indexForPrime; i++)
-           {
-               m_primes[i] = m_primes2[i];
-           }
-           delete[] m_primes2;
+           increaseSize(indexForPrime);
        }
    }
    m_max = indexForPrime;
@@ -74,3 +63,22 @@ PrimeVector::~PrimeVector()
     delete[] m_primes;
 }
 
+void PrimeVector::increaseSize(uint16_t indexForPrime)
+{
+    
+    int* m_primes2 = new int[indexForPrime];
+
+    for (int i = 0; i < indexForPrime; i++)
+    {
+        m_primes2[i] = m_primes[i];
+    }
+
+    delete[] m_primes;
+    m_primes = new int[indexForPrime + 1];
+
+    for (int i = 0; i < indexForPrime; i++)
+    {
+        m_primes[i] = m_primes2[i];
+    }
+    delete[] m_primes2;
+}

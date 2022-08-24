@@ -25,6 +25,8 @@ namespace Math
 
       /// @returns The end pointer (sentinel)
       const int* end() const;
+      void increaseSize(uint16_t indexForPrime);
+      
 
    private:
       /// @brief Calculates all primes up to max
