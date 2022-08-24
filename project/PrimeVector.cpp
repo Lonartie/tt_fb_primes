@@ -25,19 +25,19 @@ const int* PrimeVector::end() const
 
 void PrimeVector::calculatePrimes(uint16_t max) 
 {
-   uint16_t newSize = 0;
+   uint16_t indexForPrimes = 0;
    m_primes = new int[1];
      
    for (uint16_t index = 0; index <= max; index++)
    {
       if (isPrime(index))
       {
-         m_primes[newSize] = index;
-         ++newSize;
-         increaseSize(newSize);
+         m_primes[indexForPrimes] = index;
+         ++indexForPrimes;
+         increaseSize(indexForPrimes);
       }
    }
-   m_max = newSize;
+   m_max = indexForPrimes;
 }
 
 bool PrimeVector::isPrime(uint16_t value) const
@@ -63,11 +63,11 @@ PrimeVector::~PrimeVector()
     delete[] m_primes;
 }
 
-void PrimeVector::increaseSize(uint16_t indexForPrime)
+void PrimeVector::increaseSize(uint16_t newSize)
 {
-   int* tmpArray = new int[indexForPrime + 1];
+   int* tmpArray = new int[newSize + 1];
 
-   for (int i = 0; i <= indexForPrime; i++)
+   for (int i = 0; i < newSize; i++)
    {
        tmpArray[i] = m_primes[i];
    }

@@ -25,10 +25,11 @@ namespace Math
 
       /// @returns The end pointer (sentinel)
       const int* end() const;
-      /// @brief increases the size by using a second tmp array
-      void increaseSize(uint16_t indexForPrime);
-      
 
+      /// @brief Increases the size
+      /// @param newSize The new size for the array
+      void increaseSize(uint16_t newSize);
+      
    private:
       /// @brief Calculates all primes up to max
       /// @param max The upper boundary to calculate primes up to
