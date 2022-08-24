@@ -14,6 +14,7 @@ namespace Math
 
    public:
       PrimeVector() = default;
+      ~PrimeVector();
 
       /// @brief Calculates all primes up to max and stores them
       /// @param max The upper boundary to calculate up to
@@ -25,6 +26,10 @@ namespace Math
       /// @returns The end pointer (sentinel)
       const int* end() const;
 
+      /// @brief Increases the size
+      /// @param newSize The new size for the array
+      void increaseSize(uint16_t newSize);
+      
    private:
       /// @brief Calculates all primes up to max
       /// @param max The upper boundary to calculate primes up to
