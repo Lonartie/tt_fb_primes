@@ -29,7 +29,7 @@ namespace Math
    private:
       /// @brief Calculates all primes up to max
       /// @param max The upper boundary to calculate primes up to
-      void calculatePrimes(uint16_t max, uint16_t indexForPrime);
+      void calculatePrimes(uint16_t max);
 
       /// @brief Checks whether or not this number is prime
       /// @param value The value to check for prime
@@ -39,6 +39,5 @@ namespace Math
    private:
       int* m_primes = nullptr;
       uint16_t m_max = 0;
-      uint16_t indexForPrime = 0;
    };
 }
