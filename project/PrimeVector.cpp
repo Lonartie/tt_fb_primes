@@ -25,27 +25,27 @@ const int* PrimeVector::end() const
 
 void PrimeVector::calculatePrimes(uint16_t max) 
 {
-    uint16_t indexForPrime = 0;
-    m_primes = new int[indexForPrime + 1];
-    
+   uint16_t newSize = 0;
+   m_primes = new int[1];
+     
    for (uint16_t index = 0; index <= max; index++)
    {
-       if (isPrime(index))
-       {
-           m_primes[indexForPrime] = index;
-           ++indexForPrime;
-           increaseSize(indexForPrime);
-       }
+      if (isPrime(index))
+      {
+         m_primes[newSize] = index;
+         ++newSize;
+         increaseSize(newSize);
+      }
    }
-   m_max = indexForPrime;
+   m_max = newSize;
 }
 
 bool PrimeVector::isPrime(uint16_t value) const
 {
-    if (value < 2)
-    {
-        return false;
-    }
+   if (value < 2)
+   {
+      return false;
+   }
 
    for (uint16_t index = 2; index < value; index++)
    {
@@ -65,20 +65,13 @@ PrimeVector::~PrimeVector()
 
 void PrimeVector::increaseSize(uint16_t indexForPrime)
 {
-    
-    int* m_primes2 = new int[indexForPrime];
+   int* tmpArray = new int[indexForPrime + 1];
 
-    for (int i = 0; i < indexForPrime; i++)
-    {
-        m_primes2[i] = m_primes[i];
-    }
-
-    delete[] m_primes;
-    m_primes = new int[indexForPrime + 1];
-
-    for (int i = 0; i < indexForPrime; i++)
-    {
-        m_primes[i] = m_primes2[i];
-    }
-    delete[] m_primes2;
+   for (int i = 0; i <= indexForPrime; i++)
+   {
+       tmpArray[i] = m_primes[i];
+   }
+   delete[] m_primes;
+   m_primes = tmpArray;
 }
+

@@ -25,6 +25,7 @@ namespace Math
 
       /// @returns The end pointer (sentinel)
       const int* end() const;
+      /// @brief increases the size by using a second tmp array
       void increaseSize(uint16_t indexForPrime);
       
 
