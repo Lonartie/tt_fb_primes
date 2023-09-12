@@ -8,16 +8,18 @@ Requirements: <br/>
 - You are only allowed to change the code in the PrimeVector class (header + source file) <br/>
  <br/>
 Expected output: <br/>
-2 <br/>
-3 <br/>
-5 <br/>
-7 <br/>
-11 <br/>
-13 <br/>
-17 <br/>
-19 <br/>
-23 <br/>
-29 <br/>
-31 <br/>
- <br/>
+
+```
+2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+```
 Happy coding!
